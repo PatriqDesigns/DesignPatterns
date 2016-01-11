@@ -16,10 +16,10 @@ public class Main {
         cart.getProducts().add(new Book());
         cart.getProducts().add(new DVD());
         ExpeditionCost expeditionCost = new ExpeditionCost();
-        expeditionCost.visit(cart);
+        cart.accept(expeditionCost);
         System.out.println(expeditionCost.getPrice());
         ExpeditionTime expeditionTime = new ExpeditionTime();
-        expeditionTime.visit(cart);
+        cart.accept(expeditionTime);
         System.out.println(expeditionTime.getTime());
     }
 }
